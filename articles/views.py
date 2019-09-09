@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from . import models
 from .models import Article
 
 # Create your views here.
@@ -30,7 +29,7 @@ def create(request):
 def detail(request, pk):
     article = Article.objects.get(pk=pk)
     context = {
-        'pk' : article.pk,
+        'pk' : article.pk,                                          
         'title' : article.title,
         'content' : article.content,
         'created' : article.created_at,
