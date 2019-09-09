@@ -1,0 +1,25 @@
+{% extends 'articles/base.html' %}
+{% block body %}
+<!-- 제목 -->
+<div class="jumbotron">
+  <h1>Reboot Django</h1>
+</div>
+<div>
+  <!-- New 버튼 -->
+  <a href="new/">
+    <button class="btn btn-primary btn-lg" type="submit" id="content">새 글 쓰기</button>
+  </a>
+</div>
+<!-- 글 목록 Card -->
+<div class="card mx-auto" style="width: 100vw;">
+  <ul class="list-group list-group-flush">
+    {% for art in article %}
+    <li class="list-group-item">
+      <h4>Article id . {{ art.pk }}</h4>
+      <h2><a href='{{ art.pk }}'>{{ art.title }}</a></h2>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

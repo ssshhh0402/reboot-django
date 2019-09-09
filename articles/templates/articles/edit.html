@@ -1,0 +1,28 @@
+{% extends 'articles/base.html' %}
+{% block body %}
+<!-- 제목 -->
+<div class="jumbotron">
+  <h1>Modify Article</h1>
+</div>
+<hr>
+<!-- 수정 양식 -->
+<div class="container">
+  <form action="/articles/{{ articles.pk }}/update" method="POST">
+    <div class="form-group">
+      {% csrf_token %}
+      <label for="title">Title</label>
+      <br>
+      <input style="width: 50vw" type="text" name="title" id="title" value="{{ articles.title }} ">
+      <br>
+      <small id="title" class="form-text text-muted">글의 제목을 수정해 주세요</small>
+    </div>
+    <div class="form-group">
+      <textarea style="width: 50vw" name="content" id="content" cols="30"
+        rows="26">{{ articles.content }}</textarea><br>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="submit" id="content">수정</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

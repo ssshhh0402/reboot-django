@@ -1,0 +1,20 @@
+{% extends 'articles/base.html' %}
+{% block body %}
+<!-- 제목 -->
+<div class="jumbotron">
+    <h1>{{ title }}</h1>
+    <small>created at</small>
+    <small>{{ created }}</small>
+</div>
+<!-- 본문 -->
+  <div class="container">
+<textarea readonly style="width: 50vw" name="content" id="content" cols="30" rows="26">{{ content }}</textarea><br>
+</form>
+<form action="delete">
+    <button class="btn btn-outline-secondary" type="submit" id="content">삭제</button>
+</form>
+<form action="edit">
+    <button class="btn btn-outline-secondary primary" type="submit" id="content">수정</button>
+</form>
+</div>
+{% endblock %}
